@@ -1,0 +1,276 @@
+:root {
+  --pink: #e71cbe;
+  --pink-lt: #ff4dda;
+  --pink-dk: #b81292;
+  --pink-pale: #ffe6f9;
+  --navy: #0a0a3c;
+  --navy-dark: #05022a;
+  --cream: #fff9f2;
+  --text-dark: #1a1a2e;
+  --text-muted: #4a4a6a;
+  --card-white: #ffffff;
+  --shadow-sm: 0 6px 14px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --transition-default: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: #f5f0ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect x='10' y='90' width='80' height='12' rx='6' fill='%23B8B0FF' opacity='0.08'/%3E%3Crect x='4' y='88' width='14' height='16' rx='4' fill='%239080F0' opacity='0.08'/%3E%3Crect x='82' y='88' width='14' height='16' rx='4' fill='%239080F0' opacity='0.08'/%3E%3Cellipse cx='155' cy='50' rx='28' ry='10' fill='%23FFB8E0' opacity='0.08'/%3E%3Cellipse cx='155' cy='47' rx='24' ry='8' fill='%23FFD0F0' opacity='0.08'/%3E%3Cpath d='M132 47 Q136 36 140 47 Q144 36 148 47 Q152 36 156 47 Q160 36 164 47 Q168 36 172 47 Q176 36 178 47' fill='%23FFE0FF' stroke='%23FFB0D0' stroke-width='0.8' opacity='0.15'/%3E%3Cpath d='M50 10 Q52 30 50 50' stroke='%23A090FF' stroke-width='2' stroke-linecap='round' fill='none' opacity='0.08'/%3E%3Cellipse cx='46' cy='18' rx='4' ry='8' fill='%23A090FF' opacity='0.08'/%3E%3Cellipse cx='54' cy='24' rx='4' ry='8' fill='%23A090FF' opacity='0.08'/%3E%3Cellipse cx='46' cy='32' rx='4' ry='8' fill='%23A090FF' opacity='0.08'/%3E%3Cellipse cx='54' cy='38' rx='4' ry='8' fill='%23A090FF' opacity='0.08'/%3E%3Cellipse cx='160' cy='145' rx='16' ry='12' fill='%23FFC0E8' opacity='0.08'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+/* Container for content */
+body {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+  background: var(--navy);
+  padding: 0.8rem 1.5rem;
+  border-radius: 60px;
+  margin-bottom: 2rem;
+  display: inline-block;
+  box-shadow: var(--shadow-sm);
+}
+
+.topbar a {
+  color: var(--pink-lt);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-default);
+}
+
+.topbar a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.topbar span {
+  color: rgba(255,255,255,0.3);
+  margin: 0 0.6rem;
+}
+
+/* ---------- HEADINGS (Extra features #4 & #5) ---------- */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.25em;          /* Extra feature #4: wide headings */
+  background: var(--navy);         /* Extra feature #5: background behind heading text */
+  display: inline-block;           /* #5: tight background */
+  padding: 0.4rem 1.2rem;
+  border-radius: 40px;
+  color: white;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, var(--navy), var(--pink-dk));
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  background: var(--navy);
+  border-left: 4px solid var(--pink);
+}
+
+/* ---------- IMAGE & META ---------- */
+.clearfix {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1rem 0 1.5rem;
+}
+
+.pie-img {
+  max-width: 280px;
+  width: 100%;
+  border-radius: 32px;
+  box-shadow: var(--shadow-md);
+  border: 3px solid white;
+  transition: transform 0.2s;
+}
+
+.pie-img:hover {
+  transform: scale(1.02);
+}
+
+.meta {
+  background: var(--card-white);
+  padding: 1.2rem 1.8rem;
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
+  border-left: 5px solid var(--pink);
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ---------- LISTS (Ingredients & Directions) ---------- */
+ul, ol {
+  background: var(--card-white);
+  padding: 1.5rem 2rem 1.5rem 3rem;
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.8rem;
+}
+
+li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+ul li {
+  list-style-type: circle;
+}
+
+ol li {
+  margin-bottom: 0.8rem;
+}
+
+/* Nested list inside directions */
+ol ul {
+  background: transparent;
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  margin: 0.5rem 0 0 1rem;
+  box-shadow: none;
+  border-left: 2px dashed var(--pink-lt);
+  border-radius: 0;
+}
+
+ol ul li {
+  list-style-type: square;
+}
+
+/* ---------- HORIZONTAL RULES ---------- */
+hr {
+  margin: 1.8rem 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink), var(--navy), var(--pink), transparent);
+}
+
+/* ---------- USER COMMENTS (blockquotes) ---------- */
+blockquote {
+  background: #ffffff;
+  border-left: 6px solid var(--pink);
+  padding: 1.2rem 1.8rem;
+  margin: 1.5rem 0;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  font-style: normal;
+}
+
+blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--pink-dk);
+}
+
+blockquote p:first-child {
+  font-style: italic;
+}
+
+/* ---------- LINKS SECTION ---------- */
+p a {
+  color: var(--pink-dk);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pink);
+}
+
+p a:hover {
+  color: var(--pink);
+  border-bottom-style: solid;
+}
+
+/* ---------- COPYRIGHT PRE (ASCII style) ---------- */
+pre {
+  background: var(--navy-dark);
+  color: #cdb4ff;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  margin: 2rem 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border: 1px solid rgba(255, 180, 210, 0.3);
+}
+
+/* ---------- VALIDATION IMAGES ---------- */
+p img {
+  vertical-align: middle;
+  margin: 0 4px;
+  border-radius: 12px;
+  transition: opacity 0.2s;
+}
+
+p img:hover {
+  opacity: 0.8;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+  .clearfix {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.15em;
+  }
+  h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+  }
+  ul, ol {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+  .topbar {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* ---------- ACCESSORY: TOOLTIP STYLE FOR ABBR ---------- */
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  font-weight: 500;
+}
+
+/* ---------- KEEP THE "PIECE OF CAKE" STRIKE ---------- */
+del {
+  color: var(--pink);
+  text-decoration: line-through;
+  background-color: rgba(231, 28, 190, 0.1);
+  padding: 0 0.2rem;
+  border-radius: 8px;
+}

@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+  <!--
+    index.html
+    Granny's Pies - Home Page
+    CSSE 290 Web Programming
+    Features: sticky nav, SVG kitchen background, orange palette, side chef, walking chef animation
+    No emojis, separate CSS file.
+-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Granny's Pies | Homestyle Pie Recipes Since 1972</title>
+    <meta
+      name="description"
+      content="Granny's Pies - authentic, heartwarming pie recipes passed down for generations. Try our famous Lemon Meringue Pie."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- 1. STICKY NAVIGATION -->
+    <nav class="main-nav">
+      <div class="nav-container">
+        <span class="nav-logo">Granny's Pies</span>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="pie.html">Lemon Meringue Pie</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Granny's Pies</h1>
+        <p class="tagline">“Where every slice tastes like home.”</p>
+        <div class="hero-badge">Est. 1972</div>
+      </div>
+    </header>
+
+    <!-- 3. MAIN LAYOUT: Content + Chef Sidebar -->
+    <div class="page-body">
+      <!-- LEFT: Main content -->
+      <main class="content">
+        <!-- Stats cards -->
+        <div class="stats fade-in">
+          <div class="stat-card">
+            <span class="num">50+</span>
+            <span class="label">Years baking</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">12</span>
+            <span class="label">Recipes</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">8</span>
+            <span class="label">Servings</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">100%</span>
+            <span class="label">Made with love</span>
+          </div>
+        </div>
+
+        <!-- Welcome -->
+        <section id="welcome" class="fade-in">
+          <h2>Welcome to Granny's Pies</h2>
+          <p>
+            We've been baking pies the old-fashioned way for over 50 years. Our
+            recipes have been passed down through generations, using only the
+            finest ingredients and a whole lot of love. Whether you're a
+            longtime fan or a first-time visitor, we're so glad you stopped by.
+          </p>
+          <p>
+            Browse our collection of classic pie recipes and discover why
+            Granny's Pies has been a family favorite since 1972. Every crust is
+            flaky, every filling bursts with honest flavor — just like the
+            handwritten recipe cards from Granny's own kitchen.
+          </p>
+        </section>
+
+        <!-- Featured Recipe -->
+        <section class="featured fade-in">
+          <h2>Featured Recipe: Lemon Meringue Pie</h2>
+          <p>
+            This month's featured recipe is our beloved
+            <a href="pie.html" class="featured-link"
+              >Grandma's Lemon Meringue Pie</a
+            >! Bright, zesty lemon filling topped with a cloud of golden
+            meringue — it's a classic for a reason. Takes just
+            <strong>40 minutes</strong> from start to finish.
+          </p>
+          <div class="featured-tag">4.9/5 from 2,300+ home bakers</div>
+        </section>
+
+        <!-- Menu table -->
+        <section id="menu" class="fade-in">
+          <h2>Our Pie Menu</h2>
+          <div class="table-wrapper">
+            <table class="pie-table">
+              <thead>
+                <tr>
+                  <th>Pie</th>
+                  <th>Season</th>
+                  <th>Prep Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="pie.html" class="pie-link">Lemon Meringue</a>
+                  </td>
+                  <td>Year-round</td>
+                  <td>40 min</td>
+                </tr>
+                <tr>
+                  <td>Apple Crumble</td>
+                  <td>Fall</td>
+                  <td>1 hr 15 min</td>
+                </tr>
+                <tr>
+                  <td>Pumpkin Spice</td>
+                  <td>Fall / Winter</td>
+                  <td>1 hr</td>
+                </tr>
+                <tr>
+                  <td>Strawberry Rhubarb</td>
+                  <td>Spring / Summer</td>
+                  <td>55 min</td>
+                </tr>
+                <tr>
+                  <td>Pecan</td>
+                  <td>Year-round</td>
+                  <td>1 hr 10 min</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="menu-note">* Ask about our gluten‑free crust options!</p>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="fade-in">
+          <h2>About Us</h2>
+          <p>
+            Granny started baking pies in her small kitchen in rural Vermont
+            back in 1972. What began as a hobby quickly turned into a passion —
+            and then a business. Today, Granny's Pies ships across the country,
+            but every recipe still follows the original handwritten cards from
+            Granny's recipe box.
+          </p>
+          <p>
+            Our ingredients are sourced locally whenever possible, and we never
+            use artificial preservatives. We believe great pie should taste like
+            it was made just for you. Join our family table.
+          </p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="fade-in">
+          <h2>Contact Us</h2>
+          <address class="contact-block">
+            <div class="contact-line">Granny's Pies</div>
+            <div class="contact-line">
+              123 Orchard Lane, Burlington, VT 05401
+            </div>
+            <div class="contact-line">
+              Email:
+              <a href="mailto:hello@grannyspies.example.com"
+                >hello@grannyspies.example.com</a
+              >
+            </div>
+            <div class="contact-line">Phone: (802) 555-0199</div>
+          </address>
+        </section>
+      </main>
+
+      <!-- RIGHT: Sticky chef sidebar -->
+      <aside class="chef-sidebar">
+        <div class="speech-bubble">
+          <p>
+            <strong>Welcome, friend!</strong><br />
+            I'm Chef Granny! I've been baking pies since 1972.<br /><br />
+            Try my
+            <a href="pie.html" class="bubble-link">Lemon Meringue Pie</a> —
+            it'll warm your heart!
+          </p>
+        </div>
+        <div class="chef-wrapper">
+          <svg
+            width="180"
+            height="260"
+            viewBox="0 0 160 260"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Chef Granny character"
+          >
+            <use href="#chef-svg-defs"></use>
+          </svg>
+        </div>
+        <div class="chef-caption">Baked with heart since 1972</div>
+      </aside>
+    </div>
+
+    <!-- 4. WALKING CHEF (moves across bottom) -->
+    <div class="walking-chef-container">
+      <div class="walking-chef">
+        <svg
+          width="100"
+          height="140"
+          viewBox="0 0 160 260"
+          xmlns="http://www.w3.org/2000/svg"
+          class="walking-svg"
+        >
+          <use href="#walking-chef-defs"></use>
+        </svg>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>Copyright &copy; 2012 Granny's Pies — All rights reserved.</p>
+        <p class="footer-tagline">Made from scratch, served with joy.</p>
+      </div>
+    </footer>
+
+    <!-- Hidden SVG definitions (shared chef, plus walking version with leg classes) -->
+    <svg style="display: none">
+      <defs>
+        <!-- Original chef (static, used in sidebar) -->
+        <g id="chef-svg-defs">
+          <ellipse cx="80" cy="254" rx="46" ry="7" fill="rgba(0,0,0,0.18)" />
+          <rect x="46" y="122" width="68" height="84" rx="12" fill="#F2E0C8" />
+          <rect x="60" y="122" width="40" height="84" rx="4" fill="#E8D0B0" />
+          <ellipse cx="80" cy="152" rx="14" ry="6" fill="#CC6010" />
+          <ellipse cx="66" cy="152" rx="8" ry="5" fill="#CC6010" />
+          <ellipse cx="94" cy="152" rx="8" ry="5" fill="#CC6010" />
+          <circle cx="80" cy="152" r="4" fill="#E87820" />
+          <rect x="46" y="118" width="68" height="14" rx="4" fill="#E86A10" />
+          <g class="pie-float">
+            <path
+              d="M48 136 Q26 148 20 165"
+              stroke="#E8A870"
+              stroke-width="16"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <ellipse cx="20" cy="171" rx="9" ry="7" fill="#E8A870" />
+            <ellipse cx="12" cy="158" rx="26" ry="8" fill="#E8D090" />
+            <ellipse cx="12" cy="155" rx="23" ry="6" fill="#F5E8A0" />
+            <path
+              d="M-10 155 Q-5 140 0 155 Q5 140 10 155 Q15 140 20 155 Q25 140 30 155 Q34 140 37 155"
+              fill="#FFFCF0"
+              stroke="#E8D870"
+              stroke-width="0.8"
+            />
+            <ellipse
+              cx="12"
+              cy="155"
+              rx="17"
+              ry="3"
+              fill="#F0C840"
+              opacity="0.55"
+            />
+            <path
+              class="steam1"
+              d="M2 150 Q4 141 2 132"
+              stroke="rgba(255,255,255,0.8)"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              class="steam2"
+              d="M12 148 Q14 138 11 128"
+              stroke="rgba(255,255,255,0.8)"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              class="steam3"
+              d="M22 150 Q24 140 21 131"
+              stroke="rgba(255,255,255,0.8)"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              fill="none"
+            />
+          </g>
+          <g class="chef-arm-right">
+            <path
+              d="M112 136 Q134 126 140 112"
+              stroke="#E8A870"
+              stroke-width="16"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <ellipse cx="141" cy="106" rx="8" ry="7" fill="#E8A870" />
+            <ellipse
+              cx="136"
+              cy="100"
+              rx="5"
+              ry="7"
+              fill="#E8A870"
+              transform="rotate(-22 136 100)"
+            />
+            <ellipse
+              cx="144"
+              cy="99"
+              rx="4"
+              ry="7"
+              fill="#E8A870"
+              transform="rotate(10 144 99)"
+            />
+            <ellipse
+              cx="150"
+              cy="106"
+              rx="4"
+              ry="6"
+              fill="#E8A870"
+              transform="rotate(32 150 106)"
+            />
+          </g>
+          <!-- Legs (original, static) -->
+          <rect x="58" y="200" width="18" height="44" rx="8" fill="#3A2000" />
+          <rect x="84" y="200" width="18" height="44" rx="8" fill="#3A2000" />
+          <ellipse cx="67" cy="242" rx="15" ry="7" fill="#1E0E00" />
+          <ellipse cx="93" cy="242" rx="15" ry="7" fill="#1E0E00" />
+          <rect x="70" y="106" width="20" height="20" rx="4" fill="#E8A870" />
+          <ellipse cx="80" cy="88" rx="33" ry="34" fill="#E8A870" />
+          <ellipse cx="48" cy="88" rx="7" ry="9" fill="#E8A870" />
+          <ellipse cx="112" cy="88" rx="7" ry="9" fill="#E8A870" />
+          <ellipse cx="48" cy="88" rx="4" ry="6" fill="#D08040" />
+          <ellipse cx="112" cy="88" rx="4" ry="6" fill="#D08040" />
+          <g class="chef-eyes">
+            <ellipse cx="68" cy="84" rx="6.5" ry="7" fill="white" />
+            <ellipse cx="92" cy="84" rx="6.5" ry="7" fill="white" />
+            <circle cx="69" cy="85" r="3.8" fill="#2A1000" />
+            <circle cx="93" cy="85" r="3.8" fill="#2A1000" />
+            <circle cx="70.5" cy="83.5" r="1.3" fill="white" />
+            <circle cx="94.5" cy="83.5" r="1.3" fill="white" />
+          </g>
+          <path
+            d="M61 75 Q68 71 74 74"
+            stroke="#4A2000"
+            stroke-width="2.8"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M86 74 Q92 71 99 75"
+            stroke="#4A2000"
+            stroke-width="2.8"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <ellipse cx="80" cy="93" rx="5" ry="4" fill="#D07840" />
+          <circle cx="77" cy="94.5" r="2.2" fill="#B05820" />
+          <circle cx="83" cy="94.5" r="2.2" fill="#B05820" />
+          <ellipse
+            cx="57"
+            cy="97"
+            rx="8"
+            ry="5.5"
+            fill="#E86040"
+            opacity="0.32"
+          />
+          <ellipse
+            cx="103"
+            cy="97"
+            rx="8"
+            ry="5.5"
+            fill="#E86040"
+            opacity="0.32"
+          />
+          <path
+            d="M67 106 Q80 120 93 106"
+            stroke="#7A3010"
+            stroke-width="2.8"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <rect x="50" y="56" width="60" height="20" rx="6" fill="white" />
+          <rect x="50" y="68" width="60" height="8" rx="3" fill="#EEE5D5" />
+          <ellipse cx="80" cy="40" rx="31" ry="30" fill="white" />
+          <rect
+            x="50"
+            y="62"
+            width="60"
+            height="6"
+            rx="2"
+            fill="#E86A10"
+            opacity="0.3"
+          />
+          <path
+            d="M61 55 Q65 43 61 32"
+            stroke="#DDD5C5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M80 53 Q80 41 80 29"
+            stroke="#DDD5C5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M99 55 Q95 43 99 32"
+            stroke="#DDD5C5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path d="M70 110 Q75 117 80 112 Q85 117 90 110" fill="#4A2000" />
+          <path
+            d="M50 72 Q46 80 48 90"
+            stroke="#CCC0A8"
+            stroke-width="3"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M110 72 Q114 80 112 90"
+            stroke="#CCC0A8"
+            stroke-width="3"
+            stroke-linecap="round"
+            fill="none"
+          />
+        </g>
+
+        <!-- Walking chef (same but legs have classes for animation) -->
+        <g id="walking-chef-defs">
+          <ellipse cx="80" cy="254" rx="46" ry="7" fill="rgba(0,0,0,0.18)" />
+          <rect x="46" y="122" width="68" height="84" rx="12" fill="#F2E0C8" />
+          <rect x="60" y="122" width="40" height="84" rx="4" fill="#E8D0B0" />
+          <ellipse cx="80" cy="152" rx="14" ry="6" fill="#CC6010" />
+          <ellipse cx="66" cy="152" rx="8" ry="5" fill="#CC6010" />
+          <ellipse cx="94" cy="152" rx="8" ry="5" fill="#CC6010" />
+          <circle cx="80" cy="152" r="4" fill="#E87820" />
+          <rect x="46" y="118" width="68" height="14" rx="4" fill="#E86A10" />
+          <!-- left arm holding pie (no float for walking) -->
+          <path
+            d="M48 136 Q26 148 20 165"
+            stroke="#E8A870"
+            stroke-width="16"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <ellipse cx="20" cy="171" rx="9" ry="7" fill="#E8A870" />
+          <ellipse cx="12" cy="158" rx="26" ry="8" fill="#E8D090" />
+          <ellipse cx="12" cy="155" rx="23" ry="6" fill="#F5E8A0" />
+          <path
+            d="M-10 155 Q-5 140 0 155 Q5 140 10 155 Q15 140 20 155 Q25 140 30 155 Q34 140 37 155"
+            fill="#FFFCF0"
+            stroke="#E8D870"
+            stroke-width="0.8"
+          />
+          <ellipse
+            cx="12"
+            cy="155"
+            rx="17"
+            ry="3"
+            fill="#F0C840"
+            opacity="0.55"
+          />
+          <!-- right arm waving (no animation to keep walking focus) -->
+          <path
+            d="M112 136 Q134 126 140 112"
+            stroke="#E8A870"
+            stroke-width="16"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <ellipse cx="141" cy="106" rx="8" ry="7" fill="#E8A870" />
+          <ellipse
+            cx="136"
+            cy="100"
+            rx="5"
+            ry="7"
+            fill="#E8A870"
+            transform="rotate(-22 136 100)"
+          />
+          <ellipse
+            cx="144"
+            cy="99"
+            rx="4"
+            ry="7"
+            fill="#E8A870"
+            transform="rotate(10 144 99)"
+          />
+          <ellipse
+            cx="150"
+            cy="106"
+            rx="4"
+            ry="6"
+            fill="#E8A870"
+            transform="rotate(32 150 106)"
+          />
+          <!-- Legs with classes for walking animation -->
+          <rect
+            class="walk-leg-left"
+            x="58"
+            y="200"
+            width="18"
+            height="44"
+            rx="8"
+            fill="#3A2000"
+          />
+          <rect
+            class="walk-leg-right"
+            x="84"
+            y="200"
+            width="18"
+            height="44"
+            rx="8"
+            fill="#3A2000"
+          />
+          <ellipse cx="67" cy="242" rx="15" ry="7" fill="#1E0E00" />
+          <ellipse cx="93" cy="242" rx="15" ry="7" fill="#1E0E00" />
+          <rect x="70" y="106" width="20" height="20" rx="4" fill="#E8A870" />
+          <ellipse cx="80" cy="88" rx="33" ry="34" fill="#E8A870" />
+          <ellipse cx="48" cy="88" rx="7" ry="9" fill="#E8A870" />
+          <ellipse cx="112" cy="88" rx="7" ry="9" fill="#E8A870" />
+          <ellipse cx="48" cy="88" rx="4" ry="6" fill="#D08040" />
+          <ellipse cx="112" cy="88" rx="4" ry="6" fill="#D08040" />
+          <g class="chef-eyes-walk">
+            <ellipse cx="68" cy="84" rx="6.5" ry="7" fill="white" />
+            <ellipse cx="92" cy="84" rx="6.5" ry="7" fill="white" />
+            <circle cx="69" cy="85" r="3.8" fill="#2A1000" />
+            <circle cx="93" cy="85" r="3.8" fill="#2A1000" />
+            <circle cx="70.5" cy="83.5" r="1.3" fill="white" />
+            <circle cx="94.5" cy="83.5" r="1.3" fill="white" />
+          </g>
+          <path
+            d="M61 75 Q68 71 74 74"
+            stroke="#4A2000"
+            stroke-width="2.8"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M86 74 Q92 71 99 75"
+            stroke="#4A2000"
+            stroke-width="2.8"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <ellipse cx="80" cy="93" rx="5" ry="4" fill="#D07840" />
+          <circle cx="77" cy="94.5" r="2.2" fill="#B05820" />
+          <circle cx="83" cy="94.5" r="2.2" fill="#B05820" />
+          <ellipse
+            cx="57"
+            cy="97"
+            rx="8"
+            ry="5.5"
+            fill="#E86040"
+            opacity="0.32"
+          />
+          <ellipse
+            cx="103"
+            cy="97"
+            rx="8"
+            ry="5.5"
+            fill="#E86040"
+            opacity="0.32"
+          />
+          <path
+            d="M67 106 Q80 120 93 106"
+            stroke="#7A3010"
+            stroke-width="2.8"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <rect x="50" y="56" width="60" height="20" rx="6" fill="white" />
+          <rect x="50" y="68" width="60" height="8" rx="3" fill="#EEE5D5" />
+          <ellipse cx="80" cy="40" rx="31" ry="30" fill="white" />
+          <rect
+            x="50"
+            y="62"
+            width="60"
+            height="6"
+            rx="2"
+            fill="#E86A10"
+            opacity="0.3"
+          />
+          <path
+            d="M61 55 Q65 43 61 32"
+            stroke="#DDD5C5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M80 53 Q80 41 80 29"
+            stroke="#DDD5C5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M99 55 Q95 43 99 32"
+            stroke="#DDD5C5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path d="M70 110 Q75 117 80 112 Q85 117 90 110" fill="#4A2000" />
+          <path
+            d="M50 72 Q46 80 48 90"
+            stroke="#CCC0A8"
+            stroke-width="3"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M110 72 Q114 80 112 90"
+            stroke="#CCC0A8"
+            stroke-width="3"
+            stroke-linecap="round"
+            fill="none"
+          />
+        </g>
+      </defs>
+    </svg>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -20px 0px" },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
