@@ -46,8 +46,6 @@ h2 {
   font-size: 1.9rem;
   font-weight: 600;
   color: var(--navy-dark);
-  border-left: 5px solid var(--pink);
-  padding-left: 1rem;
   margin-bottom: 1.1rem;
   letter-spacing: -0.01em;
 }
@@ -81,6 +79,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 1.8rem;
+  align-items: center;
 }
 
 .nav-logo {
@@ -89,6 +88,12 @@ a:hover {
   color: var(--pink-lt);
   letter-spacing: -0.3px;
   padding: 0.9rem 0;
+  align-items: center;
+}
+.nav-container img {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 .nav-links {
@@ -102,7 +107,7 @@ a:hover {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 1rem 1.3rem;
+  padding: 0.5rem 1.3rem;
   border-radius: 40px;
   transition: all 0.2s ease;
 }
@@ -160,21 +165,7 @@ a:hover {
   animation-fill-mode: forwards;
 }
 
-.hero-badge {
-  display: inline-block;
-  background: rgba(255, 220, 240, 0.2);
-  backdrop-filter: blur(8px);
-  padding: 0.4rem 1.2rem;
-  border-radius: 60px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #ffecf5;
-  margin-top: 1.4rem;
-  border: 1px solid rgba(255, 180, 210, 0.5);
-  animation: fadeDown 0.85s 0.35s ease forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
+
 
 /* ---------- MAIN LAYOUT: GRID + SIDEBAR ---------- */
 .page-body {
@@ -230,7 +221,6 @@ a:hover {
 /* ---------- FEATURED SECTION ---------- */
 .featured {
   background: linear-gradient(105deg, #ffffff 0%, #fdf0ff 100%);
-  
   border-radius: 24px;
   padding: 1.6rem 1.8rem;
   margin-bottom: 2.5rem;
@@ -308,12 +298,6 @@ a:hover {
   color: var(--pink-dk);
 }
 
-.menu-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 0.5rem;
-}
-
 /* ---------- CONTACT & ADDRESS ---------- */
 .contact-block {
   font-style: normal;
@@ -373,15 +357,7 @@ a:hover {
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.12));
 }
 
-.chef-caption {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--pink-dk);
-  background: rgba(255, 255, 255, 0.7);
-  padding: 0.2rem 0.8rem;
-  border-radius: 60px;
-  backdrop-filter: blur(4px);
-}
+
 
 /* ---------- WALKING CHEF ---------- */
 .walking-chef-container {
@@ -473,6 +449,7 @@ a:hover {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+  margin-bottom: 2rem;
 }
 
 .fade-in.visible {
@@ -562,7 +539,8 @@ a:hover {
     padding: 0.5rem 1rem;
   }
   .nav-links a {
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 0.5rem;
+    
   }
   .walking-chef {
     width: 70px;
@@ -588,5 +566,56 @@ a:hover {
   .walking-chef {
     width: 60px;
     bottom: 10px;
+  }
+}
+
+
+/* ---------- WALKING CHEF (responsive, full perimeter – requires JS) ---------- */
+.walking-chef {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: left, top;
+  filter: drop-shadow(4px 8px 12px rgba(0, 0, 0, 0.2));
+  transition: left 0.02s linear, top 0.02s linear;
+  animation: chefWalkBob 0.32s infinite alternate ease;
+}
+
+/* Animated legs – works at any scale */
+.walking-chef .walk-leg-left {
+  animation: legSwingLeft 0.38s infinite alternate;
+  transform-origin: 67px 200px;
+}
+.walking-chef .walk-leg-right {
+  animation: legSwingRight 0.38s infinite alternate;
+  transform-origin: 93px 200px;
+}
+
+@keyframes chefWalkBob {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-3.5px); }
+}
+@keyframes legSwingLeft {
+  0% { transform: rotate(-12deg); }
+  100% { transform: rotate(15deg); }
+}
+@keyframes legSwingRight {
+  0% { transform: rotate(12deg); }
+  100% { transform: rotate(-15deg); }
+}
+
+/* Responsive chef size – scales on smaller screens */
+.walking-chef svg {
+  width: 80px;
+  height: auto;
+}
+@media (max-width: 860px) {
+  .walking-chef svg {
+    width: 70px;
+  }
+}
+@media (max-width: 560px) {
+  .walking-chef svg {
+    width: 60px;
   }
 }

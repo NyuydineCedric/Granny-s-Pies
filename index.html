@@ -1,19 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <!--
-    index.html
-    Granny's Pies - Home Page
-    CSSE 290 Web Programming
-    Features: sticky nav, SVG kitchen background, orange palette, side chef, walking chef animation
-    No emojis, separate CSS file.
--->
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Granny's Pies | Homestyle Pie Recipes Since 1972</title>
+    <title>Granny's Pies | Homestyle Pie Recipes Since 1972 NCY</title>
     <meta
       name="description"
       content="Granny's Pies - authentic, heartwarming pie recipes passed down for generations. Try our famous Lemon Meringue Pie."
@@ -25,14 +18,81 @@
       rel="stylesheet"
     />
 
-    <!-- External CSS -->
+    <!-- External CSS (your original file, untouched) -->
     <link rel="stylesheet" href="index.css" />
+
+    <!-- ADDED: minimal animation CSS for the walking chef (does not affect any existing styling) -->
+    <style>
+      /* walking chef container - fixed positioning to roam the whole page */
+      .walking-chef {
+        position: fixed;
+        z-index: 9999;
+        pointer-events: none; /* so it never blocks clicks */
+        will-change: left, top;
+        filter: drop-shadow(4px 8px 12px rgba(0, 0, 0, 0.2));
+        transition:
+          left 0.02s linear,
+          top 0.02s linear;
+        animation: chefWalkBob 0.32s infinite alternate ease;
+      }
+
+      /* leg animations (targeting classes from walking-chef-defs) */
+      .walking-chef .walk-leg-left {
+        animation: legSwingLeft 0.38s infinite alternate;
+        transform-origin: 67px 200px;
+      }
+      .walking-chef .walk-leg-right {
+        animation: legSwingRight 0.38s infinite alternate;
+        transform-origin: 93px 200px;
+      }
+
+      /* subtle body bounce to enhance walking feel */
+      @keyframes chefWalkBob {
+        0% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-3.5px);
+        }
+      }
+
+      @keyframes legSwingLeft {
+        0% {
+          transform: rotate(-12deg);
+        }
+        100% {
+          transform: rotate(15deg);
+        }
+      }
+      @keyframes legSwingRight {
+        0% {
+          transform: rotate(12deg);
+        }
+        100% {
+          transform: rotate(-15deg);
+        }
+      }
+
+      /* responsive scaling for very small screens (keeps chef visible) */
+      @media (max-width: 680px) {
+        .walking-chef svg {
+          width: 70px;
+          height: auto;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- 1. STICKY NAVIGATION -->
     <nav class="main-nav">
       <div class="nav-container">
-        <span class="nav-logo">Granny's Pies</span>
+        <span class="nav-logo"
+          ><img
+            src="logo.jpg"
+            alt="logo"
+            style="height: 40px; border-radius: 50%"
+          />Granny's Pies</span
+        >
+
         <div class="nav-links">
           <a href="index.html" class="active">Home</a>
           <a href="pie.html">Lemon Meringue Pie</a>
@@ -42,20 +102,17 @@
       </div>
     </nav>
 
-    <!-- 2. HERO SECTION -->
+    <!-- HERO SECTION -->
     <header class="hero">
       <div class="hero-content">
         <h1>Granny's Pies</h1>
         <p class="tagline">“Where every slice tastes like home.”</p>
-        <div class="hero-badge">Est. 1972</div>
       </div>
     </header>
 
-    <!-- 3. MAIN LAYOUT: Content + Chef Sidebar -->
+    <!-- MAIN LAYOUT: Content + Chef Sidebar -->
     <div class="page-body">
-      <!-- LEFT: Main content -->
       <main class="content">
-        <!-- Stats cards -->
         <div class="stats fade-in">
           <div class="stat-card">
             <span class="num">50+</span>
@@ -75,7 +132,6 @@
           </div>
         </div>
 
-        <!-- Welcome -->
         <section id="welcome" class="fade-in">
           <h2>Welcome to Granny's Pies</h2>
           <p>
@@ -92,7 +148,6 @@
           </p>
         </section>
 
-        <!-- Featured Recipe -->
         <section class="featured fade-in">
           <h2>Featured Recipe: Lemon Meringue Pie</h2>
           <p>
@@ -106,7 +161,6 @@
           <div class="featured-tag">4.9/5 from 2,300+ home bakers</div>
         </section>
 
-        <!-- Menu table -->
         <section id="menu" class="fade-in">
           <h2>Our Pie Menu</h2>
           <div class="table-wrapper">
@@ -149,10 +203,8 @@
               </tbody>
             </table>
           </div>
-          <p class="menu-note">* Ask about our gluten‑free crust options!</p>
         </section>
 
-        <!-- About Us -->
         <section id="about" class="fade-in">
           <h2>About Us</h2>
           <p>
@@ -169,26 +221,21 @@
           </p>
         </section>
 
-        <!-- Contact -->
         <section id="contact" class="fade-in">
           <h2>Contact Us</h2>
           <address class="contact-block">
             <div class="contact-line">Granny's Pies</div>
-            <div class="contact-line">
-              123 Orchard Lane, Burlington, VT 05401
-            </div>
+            <div class="contact-line">Bambili Bamenda, Cameroon</div>
             <div class="contact-line">
               Email:
-              <a href="mailto:hello@grannyspies.example.com"
-                >hello@grannyspies.example.com</a
-              >
+              <a href="mailto:granny@gmail.com">granny@gmail.com</a>
             </div>
-            <div class="contact-line">Phone: (802) 555-0199</div>
+            <div class="contact-line">Phone: 678 772 649</div>
           </address>
         </section>
       </main>
 
-      <!-- RIGHT: Sticky chef sidebar -->
+      <!-- RIGHT: Sticky chef sidebar (static, original) -->
       <aside class="chef-sidebar">
         <div class="speech-bubble">
           <p>
@@ -210,33 +257,17 @@
             <use href="#chef-svg-defs"></use>
           </svg>
         </div>
-        <div class="chef-caption">Baked with heart since 1972</div>
       </aside>
-    </div>
-
-    <!-- 4. WALKING CHEF (moves across bottom) -->
-    <div class="walking-chef-container">
-      <div class="walking-chef">
-        <svg
-          width="100"
-          height="140"
-          viewBox="0 0 160 260"
-          xmlns="http://www.w3.org/2000/svg"
-          class="walking-svg"
-        >
-          <use href="#walking-chef-defs"></use>
-        </svg>
-      </div>
     </div>
 
     <footer class="site-footer">
       <div class="footer-content">
-        <p>Copyright &copy; 2012 Granny's Pies — All rights reserved.</p>
-        <p class="footer-tagline">Made from scratch, served with joy.</p>
+        <p>Copyright &copy;NCY Nyuydine Cedric😉 — All rights reserved.</p>
+        <p class="footer-tagline">And yes I, Cedric added the emoji.</p>
       </div>
     </footer>
 
-    <!-- Hidden SVG definitions (shared chef, plus walking version with leg classes) -->
+    <!-- Hidden SVG definitions (original static + walking version with leg classes) -->
     <svg style="display: none">
       <defs>
         <!-- Original chef (static, used in sidebar) -->
@@ -333,7 +364,6 @@
               transform="rotate(32 150 106)"
             />
           </g>
-          <!-- Legs (original, static) -->
           <rect x="58" y="200" width="18" height="44" rx="8" fill="#3A2000" />
           <rect x="84" y="200" width="18" height="44" rx="8" fill="#3A2000" />
           <ellipse cx="67" cy="242" rx="15" ry="7" fill="#1E0E00" />
@@ -442,7 +472,7 @@
           />
         </g>
 
-        <!-- Walking chef (same but legs have classes for animation) -->
+        <!-- Walking chef (same visual, legs have animation classes) -->
         <g id="walking-chef-defs">
           <ellipse cx="80" cy="254" rx="46" ry="7" fill="rgba(0,0,0,0.18)" />
           <rect x="46" y="122" width="68" height="84" rx="12" fill="#F2E0C8" />
@@ -452,7 +482,7 @@
           <ellipse cx="94" cy="152" rx="8" ry="5" fill="#CC6010" />
           <circle cx="80" cy="152" r="4" fill="#E87820" />
           <rect x="46" y="118" width="68" height="14" rx="4" fill="#E86A10" />
-          <!-- left arm holding pie (no float for walking) -->
+          <!-- left arm holding pie -->
           <path
             d="M48 136 Q26 148 20 165"
             stroke="#E8A870"
@@ -477,7 +507,7 @@
             fill="#F0C840"
             opacity="0.55"
           />
-          <!-- right arm waving (no animation to keep walking focus) -->
+          <!-- right arm waving -->
           <path
             d="M112 136 Q134 126 140 112"
             stroke="#E8A870"
@@ -510,7 +540,7 @@
             fill="#E8A870"
             transform="rotate(32 150 106)"
           />
-          <!-- Legs with classes for walking animation -->
+          <!-- LEGS with classes for walking animation (targeted by CSS) -->
           <rect
             class="walk-leg-left"
             x="58"
@@ -637,7 +667,133 @@
       </defs>
     </svg>
 
+    <!-- ADDED: walking chef element that moves around the whole page perimeter -->
+    <div
+      id="walkingChef"
+      class="walking-chef"
+      style="position: fixed; left: 20px; top: 20px"
+    >
+      <svg
+        viewBox="0 0 160 260"
+        width="80"
+        height="130"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use href="#walking-chef-defs"></use>
+      </svg>
+    </div>
+
+    <!-- Script for walking perimeter + original fade-in observer (unchanged) -->
     <script>
+      // ----- PERIMETER WALKING ANIMATION (legs move, chef walks all four edges) -----
+      (function () {
+        const chef = document.getElementById("walkingChef");
+        if (!chef) return;
+
+        const CHEF_W = 80; // matches svg width
+        const CHEF_H = 130; // matches svg height aspect
+        const MARGIN = 20; // distance from edges
+        let viewW = window.innerWidth;
+        let viewH = window.innerHeight;
+        let topLen = 0,
+          rightLen = 0,
+          bottomLen = 0,
+          leftLen = 0;
+        let perimeterTotal = 0;
+        let distance = 0; // distance travelled along perimeter (px)
+        let lastTimestamp = null;
+        const SPEED = 125; // pixels per second (pleasant walking speed)
+
+        function updatePerimeter() {
+          viewW = window.innerWidth;
+          viewH = window.innerHeight;
+          topLen = Math.max(0, viewW - 2 * MARGIN - CHEF_W);
+          rightLen = Math.max(0, viewH - 2 * MARGIN - CHEF_H);
+          bottomLen = Math.max(0, viewW - 2 * MARGIN - CHEF_W);
+          leftLen = Math.max(0, viewH - 2 * MARGIN - CHEF_H);
+          perimeterTotal = topLen + rightLen + bottomLen + leftLen;
+          // fallback for extremely small screens
+          if (perimeterTotal <= 0.01) {
+            perimeterTotal = (viewW + viewH) * 2;
+            topLen = Math.max(0, viewW - CHEF_W - 10);
+            rightLen = Math.max(0, viewH - CHEF_H - 10);
+            bottomLen = Math.max(0, viewW - CHEF_W - 10);
+            leftLen = Math.max(0, viewH - CHEF_H - 10);
+          }
+        }
+
+        // returns {left, top} in pixels based on distance along perimeter
+        function getPositionFromDistance(dist) {
+          if (perimeterTotal <= 0) return { left: MARGIN, top: MARGIN };
+          let d = dist % perimeterTotal;
+          // top edge (left → right)
+          if (d <= topLen) {
+            return { left: MARGIN + d, top: MARGIN };
+          }
+          d -= topLen;
+          // right edge (top → bottom)
+          if (d <= rightLen) {
+            return { left: viewW - MARGIN - CHEF_W, top: MARGIN + d };
+          }
+          d -= rightLen;
+          // bottom edge (right → left)
+          if (d <= bottomLen) {
+            return {
+              left: viewW - MARGIN - CHEF_W - d,
+              top: viewH - MARGIN - CHEF_H,
+            };
+          }
+          d -= bottomLen;
+          // left edge (bottom → top)
+          return { left: MARGIN, top: viewH - MARGIN - CHEF_H - d };
+        }
+
+        function updateChefPosition() {
+          const pos = getPositionFromDistance(distance);
+          chef.style.left = pos.left + "px";
+          chef.style.top = pos.top + "px";
+        }
+
+        function moveChef(deltaSec) {
+          if (!perimeterTotal || perimeterTotal <= 0) return;
+          distance = (distance + SPEED * deltaSec) % perimeterTotal;
+          updateChefPosition();
+        }
+
+        function walkAnimation(nowMs) {
+          if (!lastTimestamp) {
+            lastTimestamp = nowMs;
+            requestAnimationFrame(walkAnimation);
+            return;
+          }
+          let delta = Math.min(0.033, (nowMs - lastTimestamp) / 1000);
+          if (delta > 0.001) moveChef(delta);
+          lastTimestamp = nowMs;
+          requestAnimationFrame(walkAnimation);
+        }
+
+        function handleResize() {
+          let oldPerim = perimeterTotal;
+          let fraction = oldPerim > 0 ? (distance % oldPerim) / oldPerim : 0;
+          updatePerimeter();
+          if (perimeterTotal > 0) {
+            distance = fraction * perimeterTotal;
+          } else {
+            distance = 0;
+          }
+          updateChefPosition();
+        }
+
+        // initialise
+        updatePerimeter();
+        distance = 15; // start a bit after top-left corner
+        updateChefPosition();
+        lastTimestamp = null;
+        requestAnimationFrame(walkAnimation);
+        window.addEventListener("resize", handleResize);
+      })();
+
+      // ----- ORIGINAL FADE-IN OBSERVER (preserved, untouched) -----
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
