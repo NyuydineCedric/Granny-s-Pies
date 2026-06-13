@@ -538,10 +538,13 @@ a:hover {
     gap: 0.5rem;
     padding: 0.5rem 1rem;
   }
+  
+ 
   .nav-links a {
-    padding: 0.1rem 0.5rem;
-    
+    padding: 0.15rem 0.35rem;
+    font-size: 0.65rem;
   }
+
   .walking-chef {
     width: 70px;
   }
